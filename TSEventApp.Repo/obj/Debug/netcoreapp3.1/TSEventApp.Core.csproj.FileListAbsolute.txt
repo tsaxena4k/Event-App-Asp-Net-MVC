@@ -1,0 +1,20 @@
+C:\Users\tusharsaxena\source\repos\TSEventApp\TSEventApp.Repo\bin\Debug\netcoreapp3.1\TSEventApp.Core.deps.json
+C:\Users\tusharsaxena\source\repos\TSEventApp\TSEventApp.Repo\bin\Debug\netcoreapp3.1\TSEventApp.Core.dll
+C:\Users\tusharsaxena\source\repos\TSEventApp\TSEventApp.Repo\bin\Debug\netcoreapp3.1\TSEventApp.Core.pdb
+C:\Users\tusharsaxena\source\repos\TSEventApp\TSEventApp.Repo\obj\Debug\netcoreapp3.1\TSEventApp.Core.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\tusharsaxena\source\repos\TSEventApp\TSEventApp.Repo\obj\Debug\netcoreapp3.1\TSEventApp.Core.AssemblyInfoInputs.cache
+C:\Users\tusharsaxena\source\repos\TSEventApp\TSEventApp.Repo\obj\Debug\netcoreapp3.1\TSEventApp.Core.AssemblyInfo.cs
+C:\Users\tusharsaxena\source\repos\TSEventApp\TSEventApp.Repo\obj\Debug\netcoreapp3.1\TSEventApp.Core.csproj.CoreCompileInputs.cache
+C:\Users\tusharsaxena\source\repos\TSEventApp\TSEventApp.Repo\obj\Debug\netcoreapp3.1\TSEventApp.Core.dll
+C:\Users\tusharsaxena\source\repos\TSEventApp\TSEventApp.Repo\obj\Debug\netcoreapp3.1\TSEventApp.Core.pdb
+C:\Users\tusharsaxena\source\repos\TSEventApp\TSEventApp.Repo\obj\Debug\netcoreapp3.1\TSEventApp.Core.csproj.AssemblyReference.cache
+D:\gitlab-repo\Assignment 5 - MVC\TSEventApp.Repo\bin\Debug\netcoreapp3.1\TSEventApp.Core.deps.json
+D:\gitlab-repo\Assignment 5 - MVC\TSEventApp.Repo\bin\Debug\netcoreapp3.1\TSEventApp.Core.dll
+D:\gitlab-repo\Assignment 5 - MVC\TSEventApp.Repo\bin\Debug\netcoreapp3.1\TSEventApp.Core.pdb
+D:\gitlab-repo\Assignment 5 - MVC\TSEventApp.Repo\obj\Debug\netcoreapp3.1\TSEventApp.Core.csproj.AssemblyReference.cache
+D:\gitlab-repo\Assignment 5 - MVC\TSEventApp.Repo\obj\Debug\netcoreapp3.1\TSEventApp.Core.GeneratedMSBuildEditorConfig.editorconfig
+D:\gitlab-repo\Assignment 5 - MVC\TSEventApp.Repo\obj\Debug\netcoreapp3.1\TSEventApp.Core.AssemblyInfoInputs.cache
+D:\gitlab-repo\Assignment 5 - MVC\TSEventApp.Repo\obj\Debug\netcoreapp3.1\TSEventApp.Core.AssemblyInfo.cs
+D:\gitlab-repo\Assignment 5 - MVC\TSEventApp.Repo\obj\Debug\netcoreapp3.1\TSEventApp.Core.csproj.CoreCompileInputs.cache
+D:\gitlab-repo\Assignment 5 - MVC\TSEventApp.Repo\obj\Debug\netcoreapp3.1\TSEventApp.Core.dll
+D:\gitlab-repo\Assignment 5 - MVC\TSEventApp.Repo\obj\Debug\netcoreapp3.1\TSEventApp.Core.pdb

@@ -1,0 +1,7 @@
+﻿.event-wrapper{
+    ;
+}
+
+.event-wrapper .list-group li span{
+    font-weight:bold;
+}

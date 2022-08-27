@@ -1,0 +1,100 @@
+﻿@model EventViewModel;
+@{
+    ViewData["Title"] = "Edit Event";
+}
+
+<div class="create-event-wrapper pt-4 pb-4">
+    <h1 class="text-center mb-3">Edit Event</h1>
+    <div class="create-event-form">
+        @*@if (ViewBag.IsSuccess == true)
+            {
+                <div class="alert alert-success alert-dismissible fade show" role="alert">
+                    <strong>Yay Done!</strong> Event Edited Successfully. <a asp-controller="Event" asp-action="ViewDetails" asp-route-id="@ViewBag.BookId">Click here</a> to view.
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+            }*@
+        <form id="createEventForm" asp-action="UpdateEvent" asp-controller="Event">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="row mb-3">
+                <label asp-for="Title" class="col-sm-2 col-form-label">Title</label>
+                <div class="col-sm-10">
+                    <span asp-validation-for="Title" class="text-danger"></span>
+                    <input class="form-control" asp-for="Title">
+                </div>
+            </div>
+            <div class="row mb-3">
+                <label asp-for="Location" class="col-sm-2 col-form-label">Location</label>
+                <div class="col-sm-10">
+                    <span asp-validation-for="Location" class="text-danger"></span>
+                    <input class="form-control" asp-for="Location">
+                </div>
+            </div>
+            <div class="row mb-3">
+                <label asp-for="Date" class="col-sm-2 col-form-label">Date</label>
+                <div class="col-sm-10">
+                    <span asp-validation-for="Date" class="text-danger"></span>
+                    <input class="form-control" asp-for="Date">
+                </div>
+            </div>
+            <div class="row mb-3">
+                <label asp-for="StartTime" class="col-sm-2 col-form-label">Start Time</label>
+                <div class="col-sm-10">
+                    <span asp-validation-for="StartTime" class="text-danger"></span>
+                    <input class="form-control" asp-for="StartTime">
+                </div>
+            </div>
+            <div class="row mb-3">
+                <label asp-for="DurationInHours" class="col-sm-2 col-form-label">Duration</label>
+                <div class="col-sm-10">
+                    <span asp-validation-for="DurationInHours" class="text-danger"></span>
+                    <input class="form-control" max="4" min="0" asp-for="DurationInHours" placeholder="Enter duration in hours">
+                </div>
+            </div>
+            <div class="row mb-3">
+                <label asp-for="Organiser" class="col-sm-2 col-form-label">Organiser</label>
+                <div class="col-sm-10">
+                    <span asp-validation-for="Organiser" class="text-danger"></span>
+                    <input class="form-control" asp-for="Organiser">
+                </div>
+            </div>
+            <div class="row mb-3">
+                <label asp-for="InviteByEmail" class="col-sm-2 col-form-label">Invite by Emails</label>
+                <div class="col-sm-10">
+                    <span asp-validation-for="InviteByEmail" class="text-danger"></span>
+                    <input class="form-control" asp-for="InviteByEmail">
+                    <div id="emailHelp" class="form-text">Enter Invitee's emails seperated with comma (,)</div>
+                </div>
+            </div>
+            <div class="row mb-3">
+                <label asp-for="Type" class="col-sm-2 col-form-label">Event Type</label>
+                <div class="col-sm-10 pt-2">
+                    <input class="form-check-input" type="radio" name="Type" value="Public" checked />&nbsp;Public&nbsp;
+                    <input class="form-check-input" type="radio" name="Type" value="Private" />&nbsp;Private&nbsp;
+                    <span asp-validation-for="Type" class="text-danger"></span>
+                </div>
+            </div>
+
+            <div class="row mb-3">
+                <label asp-for="Description" class="col-sm-2 col-form-label">Description</label>
+                <div class="col-sm-10">
+                    <span asp-validation-for="Description" class="text-danger"></span>
+                    <textarea class="form-control" placeholder="Tell us about the event" asp-for="Description" style="height: 80px"></textarea>
+                </div>
+            </div>
+            <div class="row mb-3">
+                <label asp-for="OtherDetails" class="col-sm-2 col-form-label">Other Details</label>
+                <div class="col-sm-10">
+                    <span asp-validation-for="OtherDetails" class="text-danger"></span>
+                    <textarea class="form-control" placeholder="Is there anything else" asp-for="OtherDetails" style="height: 100px"></textarea>
+                </div>
+            </div>
+            <div class="text-center">
+                <button type="submit" class="btn btn-primary">Save</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

@@ -1,0 +1,65 @@
+﻿@inject Microsoft.AspNetCore.Identity.SignInManager<IdentityUser> _signInManager
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewData["Title"] | Book Event App</title>
+    <link href="~/lib/twitter-bootstrap/css/bootstrap.css" rel="stylesheet" />
+    <link href="~/Styles/StyleSheet.css" rel="stylesheet" />
+    @*@RenderSection("links", required: false)*@
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <div class="container-fluid">
+                <a class="navbar-brand" asp-controller="Home" asp-action="Index">TSEventApp</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse justify-content-between" id="navbarNav">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link active" asp-controller="Home" asp-action="Index">Home</a>
+                        </li>
+
+                        @if (_signInManager.IsSignedIn(User))
+                        {
+                            <li class="nav-item">
+                                <a class="nav-link" asp-controller="Event" asp-action="MyEvents">My Events</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" asp-controller="Event" asp-action="EventsInvitedTo">Events Invited to</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" asp-controller="Event" asp-action="CreateEvent">Create</a>
+                            </li>
+                        }
+                    </ul>
+                    <div class="nav-actions">
+                        @if (_signInManager.IsSignedIn(User))
+                        {
+                            <a class="btn btn-sm btn-primary" asp-action="LogOut" asp-controller="Account">Logout</a>
+                        }
+                        else
+                        {
+                            <a class="btn btn-sm btn-primary me-2" asp-controller="Account" asp-action="Login">Login</a>
+                            <a class="btn btn-sm btn-primary" asp-controller="Account" asp-action="SignUp">SignUp</a>
+                        }
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <main class="container pb-3">
+        @RenderBody()
+    </main>
+    <footer class="py-2">
+        <p class="text-center text-white m-0">Made with ❤️ by <a href="https://github.com/tsaxena4k" target="_blank" class="text-white">Tushar Saxena</a></p>
+    </footer>
+    <script src="~/JS/JavaScript.js"></script>
+    <script src="~/lib/twitter-bootstrap/js/bootstrap.js"></script>
+    <script src="https://kit.fontawesome.com/ed097eda64.js" crossorigin="anonymous"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

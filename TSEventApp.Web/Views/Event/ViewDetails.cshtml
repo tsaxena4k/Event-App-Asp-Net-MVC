@@ -1,0 +1,110 @@
+﻿@model EventViewModel;
+@{
+    ViewData["Title"] = "ViewDetails";
+}
+
+<div class="event-wrapper pt-4">
+    <div class="d-flex justify-content-between align-items-center">
+        <h1 class="text-center">@Model.Title</h1>
+        @if (Model.Date >= DateTime.Now)
+        {
+            <div><a class="btn btn-sm btn-danger" asp-controller="Event" asp-action="UpdateEvent" asp-route-Id="@Model.Id">Edit <i class="fa-solid fa-pen-to-square"></i></a></div>
+
+        }
+    </div>
+ 
+    <hr />
+    <div class="row pt-3">
+        <div class="col-sm-6">
+            <h4>Description</h4>
+            @if (Model.Description != null)
+            {
+                <p>@Model.Description</p>
+            }
+            else
+            {
+                <p>No Description</p>
+            }
+            <h5>Other Details</h5>
+            @if (Model.OtherDetails != null)
+            {
+                <p>@Model.OtherDetails</p>
+            }
+            else
+            {
+                <p>No Details</p>
+            }
+        </div>
+        <div class="col-sm-6">
+            <ul class="list-group">
+                <li class="list-group-item"><i class="fa-solid fa-calendar"></i> <span>Date</span> @Model.Date.ToShortDateString()</li>
+                @if (Model.StartTime != null)
+                {
+                    <li class="list-group-item"><i class="fa-solid fa-clock"></i> <span>Start Time</span> @Model.StartTime.ToShortTimeString()</li>
+}
+                <li class="list-group-item"><i class="fa-solid fa-location-dot"></i> <span>Location</span> @Model.Location</li>
+                @if (Model.DurationInHours != null)
+                {
+                    <li class="list-group-item"><i class="fa-solid fa-stopwatch"></i> <span>Duration</span> @Model.DurationInHours</li>
+}
+                <li class="list-group-item"><i class="fa-solid fa-lock"></i>  <span>Type</span> @Model.Type</li>
+                @if (Model.InviteByEmail != null)
+                {
+                    var count = Model.InviteByEmail.Split(',').Count();
+                    <li class="list-group-item"><i class="fa-solid fa-user-group"></i>  <span>Total Invitees</span> @count</li>
+                }
+                <li class="list-group-item"><i class="fa-solid fa-user-tie"></i>  <span>Organiser</span> @Model.Organiser</li>
+            </ul>
+        </div>
+    </div>
+    <div class="row py-4">
+        <div class="col d-flex flex-column">
+            <h1>Comments</h1>
+            <hr />
+            <div class="row">
+                <div class="col-sm-6">
+                    @using (Html.BeginForm("PostComment", "Comment", new { EventId = Model.Id }))
+                    {
+                        <div class="row">
+                            <div class="col d-flex mb-3 align-items-center">
+                                <img src="https://image.ibb.co/jw55Ex/def_face.jpg" class="img img-rounded img-fluid" width="50" />
+                                <p class="ms-2 pt-2 fw-bold">@User.Identity.Name</p>
+                            </div>
+
+                        </div>
+                        <div class="row">
+                            <div class="col mb-3">
+                                <textarea class="form-control" name="comment" id="comment" rows="3"></textarea>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col">
+                                <button class="btn btn-sm btn-success" type="submit" value="Post" id="submitComment"> Post comment</button>
+                            </div>
+                        </div>
+                    }
+                </div>
+                <div class="col-sm-6">
+                    @if (Model.Comments.Count != 0)
+                    {
+                        <div class="row py-3">
+                            <h3>Previous Comments</h3>
+                            @foreach (var i in Model.Comments)
+                            {
+                                <div class="row pt-2">
+                                    <div class="col">
+                                        <ul class="list-group">
+                                            <li class="list-group-item list-group-item-success"><i class="fa-solid fa-comment"></i> @i.comment</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            }
+                        </div>
+                    }
+                </div>
+            </div>
+            
+        </div>
+    </div>
+</div>
+

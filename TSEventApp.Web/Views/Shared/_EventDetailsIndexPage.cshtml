@@ -1,0 +1,22 @@
+﻿@model EventViewModel
+@using Microsoft.AspNetCore.Identity
+@inject SignInManager<IdentityUser> _signInManager
+@inject UserManager<IdentityUser> _userManager
+@{
+    var user = await _userManager.GetUserAsync(User);
+    var email = user != null ? user.Email : "";
+}
+
+<li class="list-group-item d-flex justify-content-between">
+    <div class="list-text">
+        @ViewData["PositionFromStart"].&nbsp;
+        <a asp-controller="Event" asp-action="ViewDetails" asp-route-id="@Model.Id">@Model.Title</a>
+    </div>
+    <div class="list-actions">
+        <span class="badge rounded-pill bg-secondary me-1">@Model.Type</span>
+        @if (_signInManager.IsSignedIn(User) && (User.Identity.Name == Model.Organiser || email == "myadmin@bookevents.com") && Model.Date >= DateTime.Now)
+        {
+            <a asp-controller="Event" asp-action="UpdateEvent" asp-route-id="@Model.Id" class="btn btn-sm btn-primary">Edit <i class="fa-solid fa-pen-to-square"></i></a>
+        }
+    </div>
+</li>

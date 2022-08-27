@@ -1,0 +1,9 @@
+﻿.create-event-wrapper .create-event-form{
+    padding:0 10rem;
+}
+
+@media (max-width: 992px) {
+    .create-event-wrapper .create-event-form {
+        padding: 0;
+    }
+}
