@@ -10,7 +10,7 @@
 - 💬 Add Comments
 - ✔️ Admin and Genric user access
 
-## ScreenShots
+## Screenshots 
 
 Login | Sign Up
 ------------ | -------------
