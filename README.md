@@ -9,3 +9,25 @@
 - 📪 Events Invites
 - 💬 Add Comments
 - ✔️ Admin and Genric user access
+
+## ScreenShots
+
+Login | Sign Up
+------------ | -------------
+<img src="./Readme Images/Login.png"/> | <img src="./Readme Images/Signup.png"/> 
+
+Stranger Home | Logged in Home
+------------- | ---------------
+<img src="./Readme Images/StrangerHome.png"/> | <img src="./Readme Images/UserHome.png"/> 
+
+Create Event |
+------------ |
+<img src="./Readme Images/CreateEvent.png"/> |
+
+View Event |
+------------ |
+<img src="./Readme Images/ViewEvent.png"/> |
+
+
+
+
